@@ -50,35 +50,37 @@ public class TC01_RegisterUser {
     @Test
     public void registerUser() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(),DataUtils.getPropertyValue("environment","HOME_URL")));
-
+        LogsUtils.info("Home page is opened");
 
         new P01_HomePage(getDriver()).
                 clickOnSignupLoginButton();
+        LogsUtils.info("Signup / Login button is clicked");
         Assert.assertTrue(VerifyUrl(getDriver(),DataUtils.getPropertyValue("environment","LOGIN_SIGNUP_URL")));
-
+        LogsUtils.info("page 'New User Signup!' is visible");
 
         new P02_LoginSignupPage(getDriver()).
                 enterSignupUsername(SIGNUP_USERNAME).
                 enterSignupEmailAddress(SIGNUP_EMAIL_ADDRESS).
                 clickOnSignupButton();
         Assert.assertTrue(new P03_SignupPage(getDriver()).verifyEnterAccountInformationLabelExisted());
-
+        LogsUtils.info("Verify that 'ENTER ACCOUNT INFORMATION' is visible");
 
         new P03_SignupPage(getDriver()).
                 fillAccountDetails(PASSWORD, FIRSTNAME, LASTNAME, COMPANY, ADDRESS1, ADDRESS2, STATE, CITY, ZIPCODE, MOBILE_NUMBER).
                 clickOnCreateAccountButton();
         Assert.assertTrue(new P04_AccountCreatedPage(getDriver()).verifyAccountCreatedLabelExisted());
-
+        LogsUtils.info("Verify that 'ACCOUNT CREATED!' is visible");
 
         new P04_AccountCreatedPage(getDriver()).clickOnContinueButton();
         Assert.assertTrue(new P01_HomePage(getDriver()).verifyLoggedInUsernameIsVisible());
-
+        LogsUtils.info("Verify that 'Logged in as username' is visible");
 
         new P01_HomePage(getDriver()).clickOnDeleteAccountButton();
         Assert.assertTrue(new P05_AccountDeletedPage(getDriver()).verifyAccountDeletedLabelExisted());
-
+        LogsUtils.info("Verify that 'ACCOUNT DELETED!' is visible");
 
         new P05_AccountDeletedPage(getDriver()).clickOnContinueButton();
+        LogsUtils.info("'continue' button is clicked and the website is returned to the home page");
 
     }
 
