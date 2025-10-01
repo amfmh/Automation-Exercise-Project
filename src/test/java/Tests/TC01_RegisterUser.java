@@ -38,7 +38,7 @@ public class TC01_RegisterUser {
     private final String MOBILE_NUMBER = DataUtils.getJsonData("AccountDetails", "mobileNumber");
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -84,7 +84,7 @@ public class TC01_RegisterUser {
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
