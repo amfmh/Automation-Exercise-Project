@@ -1,0 +1,90 @@
+package Tests;
+
+import Listeners.IInvokedMethodListenerClass;
+import Listeners.ITestResultListenerClass;
+import Pages.P01_HomePage;
+import Pages.P06_ProductsPage;
+import Pages.P08_CartPage;
+import Utilities.LogsUtils;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+
+import static DriverFactory.DriverFactory.*;
+import static Utilities.DataUtils.getPropertyValue;
+import static Utilities.Utility.VerifyUrl;
+
+@Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
+public class TC12_AddProductsInCart {
+
+    private static List<String>productsNames_ProductsPage;
+    private static List<String>productsNames_CartPage;
+
+    private static List<String>productsPrices_ProductsPage;
+    private static List<String>productsPrices_CartPage;
+    private static List<String>productsQuantities_CartPage;
+    private static List<String>productsTotalPrices_CartPage;
+
+
+    @BeforeMethod
+    public void setup() throws IOException {
+        setupDriver(getPropertyValue("environment", "Browser"));
+        LogsUtils.info("Edge driver is opened");
+        getDriver().get(getPropertyValue("environment", "BASE_URL"));
+        LogsUtils.info("Page is redirected to the URL");
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+
+    @Test
+    public void addProductsInCart() throws IOException {
+
+        Assert.assertTrue(VerifyUrl(getDriver(), getPropertyValue("environment","HOME_URL")));
+
+
+        /*new P01_HomePage(getDriver()).
+                clickOnProductsButton().
+                clickOnAddToCartButtonForFirstProduct().
+                clickOnContinueShoppingButton().
+                clickOnAddToCartButtonForSecondProduct().
+                clickOnViewCartButton();*/
+
+
+        new P01_HomePage(getDriver()).clickOnProductsButton();
+        productsNames_ProductsPage = new P06_ProductsPage(getDriver()).getFirstAndSecondProductsNames_ProductsPage();
+        productsPrices_ProductsPage = new P06_ProductsPage(getDriver()).getFirstAndSecondProductPrices_ProductsPage();
+        new P06_ProductsPage(getDriver()).
+                clickOnAddToCartButtonForFirstProduct().
+                clickOnContinueShoppingButton().
+                clickOnAddToCartButtonForSecondProduct().
+                clickOnViewCartButton();
+        productsNames_CartPage = new P08_CartPage(getDriver()).getFirstAndSecondProductsNames_CartPage();
+        productsPrices_CartPage = new P08_CartPage(getDriver()).getFirstAndSecondProductPrices_CartPage();
+        productsQuantities_CartPage = new P08_CartPage(getDriver()).getQuantityOfProducts_CartPage();
+        productsTotalPrices_CartPage = new P08_CartPage(getDriver()).getTotalPricesOfProducts_CartPage();
+
+
+        for(int i=0 ; i<=1 ; i++){
+            Assert.assertEquals(productsNames_CartPage.get(i),productsNames_ProductsPage.get(i));
+            Assert.assertEquals(productsPrices_ProductsPage.get(i),productsPrices_CartPage.get(i));
+            Assert.assertEquals(productsQuantities_CartPage.get(i),"1");
+            Assert.assertEquals(productsTotalPrices_CartPage.get(i),productsPrices_CartPage.get(i));
+        }
+
+
+    }
+
+
+    @AfterMethod
+    public void quit() {
+        quitDriver();
+    }
+
+}
