@@ -29,7 +29,7 @@ public class TC02_LoginUserWithCorrectEmailAndPassword {
     private final  String EXISTED_EMAIL_ADDRESS = DataUtils.getJsonData("ExistingUser","email");
     private final  String EXISTED_PASSWORD = DataUtils.getJsonData("ExistingUser","password");
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -69,7 +69,7 @@ public class TC02_LoginUserWithCorrectEmailAndPassword {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
