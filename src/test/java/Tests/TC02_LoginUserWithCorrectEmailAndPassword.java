@@ -42,21 +42,30 @@ public class TC02_LoginUserWithCorrectEmailAndPassword {
     @Test
     public void LoginUserWithCorrectEmailAndPassword() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(),DataUtils.getPropertyValue("environment","HOME_URL")));
-
+        LogsUtils.info("Verify that home page is visible successfully");
 
         new P01_HomePage(getDriver()).clickOnSignupLoginButton();
+        LogsUtils.info("Click on 'Signup / Login' button");
+
         Assert.assertTrue(new P02_LoginSignupPage(getDriver()).verifyLoginToYourAccountLabelExisted());
+        LogsUtils.info("Verify 'Login to your account' is visible");
 
 
         new P02_LoginSignupPage(getDriver()).
                 enterLoginEmailAddress(EXISTED_EMAIL_ADDRESS).
                 enterLoginPassword(EXISTED_PASSWORD).
                 clickOnLoginButton();
+        LogsUtils.info("Enter correct email address and password & Click 'login' button");
         Assert.assertTrue(new P01_HomePage(getDriver()).verifyLoggedInUsernameIsVisible());
+        LogsUtils.info("Verify 'Login to your account' is visible");
 
 
         new P01_HomePage(getDriver()).clickOnDeleteAccountButton();
+        LogsUtils.info("Click 'Delete Account' button");
+
         Assert.assertTrue(new P05_AccountDeletedPage(getDriver()).verifyAccountDeletedLabelExisted());
+        LogsUtils.info("Verify that 'ACCOUNT DELETED!' is visible");
+
     }
 
 
