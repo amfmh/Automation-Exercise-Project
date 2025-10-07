@@ -30,7 +30,7 @@ public class TC03_LoginUserWithIncorrectEmailAndPassword {
 
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -64,7 +64,7 @@ public class TC03_LoginUserWithIncorrectEmailAndPassword {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
