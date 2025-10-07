@@ -27,7 +27,7 @@ public class TC04_LogoutUser {
     private final  String EXISTED_PASSWORD = DataUtils.getJsonData("ExistingUser","password");
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -65,7 +65,7 @@ public class TC04_LogoutUser {
 
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
