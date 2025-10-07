@@ -40,21 +40,27 @@ public class TC04_LogoutUser {
     @Test
     public void logoutUser() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(),DataUtils.getPropertyValue("environment","HOME_URL")));
-
+        LogsUtils.info("Verify that home page is visible successfully");
 
         new P01_HomePage(getDriver()).clickOnSignupLoginButton();
+        LogsUtils.info("Click on 'Signup / Login' button");
         Assert.assertTrue(new P02_LoginSignupPage(getDriver()).verifyLoginToYourAccountLabelExisted());
+        LogsUtils.info("Verify 'Login to your account' is visible");
 
 
         new P02_LoginSignupPage(getDriver()).
                 enterLoginEmailAddress(EXISTED_EMAIL_ADDRESS).
                 enterLoginPassword(EXISTED_PASSWORD).
                 clickOnLoginButton();
+        LogsUtils.info("Enter correct email address and password & Click 'login' button");
         Assert.assertTrue(new P01_HomePage(getDriver()).verifyLoggedInUsernameIsVisible());
-
+        LogsUtils.info("Verify that 'Logged in as username' is visible");
 
         new P01_HomePage(getDriver()).clickOnLogoutButton();
+        LogsUtils.info("Click 'Logout' button");
         Assert.assertTrue(VerifyUrl(getDriver(),DataUtils.getPropertyValue("environment","LOGIN_SIGNUP_URL")));
+        LogsUtils.info("Verify that user is navigated to login page");
+
     }
 
 
