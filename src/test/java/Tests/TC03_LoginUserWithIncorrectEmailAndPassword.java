@@ -43,17 +43,22 @@ public class TC03_LoginUserWithIncorrectEmailAndPassword {
     @Test
     public void LoginUserWithIncorrectEmailAndPassword() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
+        LogsUtils.info("Verify that home page is visible successfully");
 
 
         new P01_HomePage(getDriver()).clickOnSignupLoginButton();
+        LogsUtils.info("Click on 'Signup / Login' button");
         Assert.assertTrue(new P02_LoginSignupPage(getDriver()).verifyLoginToYourAccountLabelExisted());
+        LogsUtils.info("Verify 'Login to your account' is visible");
 
 
         new P02_LoginSignupPage(getDriver()).
                 enterLoginEmailAddress(INCORRECT_LOGIN_EMAIL_ADDRESS).
                 enterLoginPassword(INCORRECT_LOGIN_PASSWORD).
                 clickOnLoginButton();
+        LogsUtils.info("Enter incorrect email address and password & Click 'login' button");
         Assert.assertTrue(new P02_LoginSignupPage(getDriver()).verifyIncorrectLoginInputDataValidationMessageIsViible());
+        LogsUtils.info("Verify error 'Your email or password is incorrect!' is visible");
 
 
     }
