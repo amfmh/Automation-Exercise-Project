@@ -45,16 +45,23 @@ public class TC09_SearchProduct {
     @Test
     public void VerifyAllProductsAndProductDetailPage() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
+        LogsUtils.info("Verify that home page is visible successfully");
 
 
         new P01_HomePage(getDriver()).clickOnProductsButton();
+        LogsUtils.info("Click on 'Products' button");
+
         Assert.assertTrue(new P06_ProductsPage(getDriver()).veryProductsPageVisibleByAllProductsLabel());
+        LogsUtils.info("Verify user is navigated to ALL PRODUCTS page successfully");
 
 
         new P06_ProductsPage(getDriver()).
                 fillSearchProductInput(SearchProductKey).
                 clickOnSearchProductButton();
+        LogsUtils.info("Enter product name in search input and click search button");
+
         assertEquals(findWebElement(getDriver(),searchedProductsLabel).getText(),"SEARCHED PRODUCTS");
+        LogsUtils.info("Verify 'SEARCHED PRODUCTS' is visible");
 
         generalWait(getDriver()).until(ExpectedConditions.visibilityOfElementLocated(productNamesSearchResults));
 
@@ -64,6 +71,7 @@ public class TC09_SearchProduct {
             Assert.assertTrue(item.getText().toLowerCase().contains(SearchProductKey.toLowerCase()));
 
         }
+        LogsUtils.info("Verify all the products related to search are visible");
 
     }
 
