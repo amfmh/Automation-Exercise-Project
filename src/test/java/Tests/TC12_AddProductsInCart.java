@@ -33,7 +33,7 @@ public class TC12_AddProductsInCart {
     private static List<String>productsTotalPrices_CartPage;
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -47,6 +47,7 @@ public class TC12_AddProductsInCart {
     public void addProductsInCart() throws IOException {
 
         Assert.assertTrue(VerifyUrl(getDriver(), getPropertyValue("environment","HOME_URL")));
+        LogsUtils.info("Verify that home page is visible successfully");
 
 
         /*new P01_HomePage(getDriver()).
@@ -58,6 +59,8 @@ public class TC12_AddProductsInCart {
 
 
         new P01_HomePage(getDriver()).clickOnProductsButton();
+        LogsUtils.info("Click 'Products' button");
+
         productsNames_ProductsPage = new P06_ProductsPage(getDriver()).getFirstAndSecondProductsNames_ProductsPage();
         productsPrices_ProductsPage = new P06_ProductsPage(getDriver()).getFirstAndSecondProductPrices_ProductsPage();
         new P06_ProductsPage(getDriver()).
@@ -65,6 +68,9 @@ public class TC12_AddProductsInCart {
                 clickOnContinueShoppingButton().
                 clickOnAddToCartButtonForSecondProduct().
                 clickOnViewCartButton();
+        LogsUtils.info("Hover over first product and click 'Add to cart' & Click 'Continue Shopping' button " +
+                "& Hover over second product and click 'Add to cart' & Click 'View Cart' button");
+
         productsNames_CartPage = new P08_CartPage(getDriver()).getFirstAndSecondProductsNames_CartPage();
         productsPrices_CartPage = new P08_CartPage(getDriver()).getFirstAndSecondProductPrices_CartPage();
         productsQuantities_CartPage = new P08_CartPage(getDriver()).getQuantityOfProducts_CartPage();
@@ -77,12 +83,12 @@ public class TC12_AddProductsInCart {
             Assert.assertEquals(productsQuantities_CartPage.get(i),"1");
             Assert.assertEquals(productsTotalPrices_CartPage.get(i),productsPrices_CartPage.get(i));
         }
-
+        LogsUtils.info("Verify both products are added to Cart & Verify their prices, quantity and total price");
 
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
