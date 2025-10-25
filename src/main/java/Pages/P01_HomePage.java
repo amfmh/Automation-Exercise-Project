@@ -1,11 +1,16 @@
 package Pages;
 
+import Utilities.LogsUtils;
 import Utilities.Utility;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
-import static Utilities.Utility.clickingOnElement;
-import static Utilities.Utility.findWebElement;
+import java.util.Set;
+
+import static Utilities.Utility.*;
+import static Utilities.Utility.scrolling;
 
 public class P01_HomePage {
 
@@ -70,5 +75,21 @@ public class P01_HomePage {
         clickingOnElement(driver, cartButton);
         return new P08_CartPage(driver);
     }
+    public P07_ProductDetailsPage clickOnViewButtonOfAnyProduct(int numberOfProductsNeeded , int totalNumberOfProducts){
+        Set<Integer> randomNumbers = generateUniqueNumber(numberOfProductsNeeded, totalNumberOfProducts);
+        for (int random : randomNumbers) {
+            By viewProductButtonForAnyProduct = By.cssSelector("a[href = '/product_details/" + random + "']");
 
+            // The next two lines to remove any ads in products page
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("document.querySelectorAll('.ad, .popup, .overlay').forEach(el => el.remove());");
+
+            scrolling(driver , viewProductButtonForAnyProduct);
+            Actions actions = new Actions(driver);
+            actions.moveToElement(findWebElement(driver, viewProductButtonForAnyProduct)).perform();
+            LogsUtils.info("randomNumber " + random);
+            clickingOnElement(driver, viewProductButtonForAnyProduct);
+        }
+        return new P07_ProductDetailsPage(driver);
+    }
 }

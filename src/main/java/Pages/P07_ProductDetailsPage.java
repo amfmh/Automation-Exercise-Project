@@ -63,7 +63,7 @@ public class P07_ProductDetailsPage {
     }
 
     public P08_CartPage clickOnViewCartButton(){
-        Utility.clickingOnElement(driver,addToCartButton);
+        Utility.clickingOnElement(driver,viewCartButton);
         return new P08_CartPage(driver);
     }
 

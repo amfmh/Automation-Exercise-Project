@@ -27,7 +27,7 @@ public class TC13_VerifyProductQuantityInCart {
     private static List<String> productsQuantities_CartPage;
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -41,25 +41,30 @@ public class TC13_VerifyProductQuantityInCart {
     public void verifyProductQuantityInCart() throws IOException {
 
         Assert.assertTrue(VerifyUrl(getDriver(), getPropertyValue("environment","HOME_URL")));
+        LogsUtils.info("Verify that home page is visible successfully");
 
-        new P01_HomePage(getDriver()).
-                clickOnProductsButton().
-                clickOnViewProductButtonOfFirstProduct();
+        new P01_HomePage(getDriver()).clickOnViewButtonOfAnyProduct(1,43);
+        LogsUtils.info("Click 'View Product' for any product on home page");
+
         Assert.assertEquals(getDriver().getTitle(),"Automation Exercise - Product Details");
+        LogsUtils.info("Verify product detail is opened");
 
         new P07_ProductDetailsPage(getDriver()).
                 increaseQuantity("4").
                 clickOnAddToCartButton().
                 clickOnViewCartButton();
+        LogsUtils.info("Increase quantity to 4 & Click 'Add to cart' button & Click 'View Cart' button");
 
         productsQuantities_CartPage = new P08_CartPage(getDriver()).getQuantityOfProducts_CartPage();
         for(int i=0 ; i<productsQuantities_CartPage.size() ; i++) Assert.assertEquals(productsQuantities_CartPage.get(i), "4");
+        LogsUtils.info("Verify that product is displayed in cart page with exact quantity");
 
     }
 
 
 
-    @AfterMethod
+
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }

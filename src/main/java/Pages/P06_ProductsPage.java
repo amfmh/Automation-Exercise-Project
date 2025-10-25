@@ -66,6 +66,26 @@ public class P06_ProductsPage {
         return new P07_ProductDetailsPage(driver);
     }
 
+
+    /*public P07_ProductDetailsPage clickOnViewButtonOfAnyProduct(int numberOfProductsNeeded , int totalNumberOfProducts){
+        Set<Integer> randomNumbers = generateUniqueNumber(numberOfProductsNeeded, totalNumberOfProducts);
+        for (int random : randomNumbers) {
+            By viewProductButtonForAnyProduct = By.cssSelector("a[href = '/product_details/" + random + "']");
+
+            // The next two lines to remove any ads in products page
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("document.querySelectorAll('.ad, .popup, .overlay').forEach(el => el.remove());");
+
+            scrolling(driver , viewProductButtonForAnyProduct);
+            Actions actions = new Actions(driver);
+            actions.moveToElement(findWebElement(driver, viewProductButtonForAnyProduct)).perform();
+            LogsUtils.info("randomNumber " + random);
+            clickingOnElement(driver, viewProductButtonForAnyProduct);
+        }
+        return new P07_ProductDetailsPage(driver);
+    }*/
+
+
     public P06_ProductsPage fillSearchProductInput(String searchKey) {
         sendData(driver, searchProductInput, searchKey);
         return this;
