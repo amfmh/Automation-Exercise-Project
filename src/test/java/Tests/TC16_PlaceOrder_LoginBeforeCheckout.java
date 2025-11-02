@@ -38,7 +38,7 @@ public class TC16_PlaceOrder_LoginBeforeCheckout {
     private static List<String> productsTotalPrices_CheckoutPage;
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -53,27 +53,39 @@ public class TC16_PlaceOrder_LoginBeforeCheckout {
     public void placeOrderLoginBeforeCheckout() throws IOException {
 
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
+        LogsUtils.info("Verify that home page is visible successfully");
 
 
         new P01_HomePage(getDriver()).clickOnSignupLoginButton();
+        LogsUtils.info("Click 'Signup / Login' button");
 
 
         new P02_LoginSignupPage(getDriver()).
                 enterLoginEmailAddress(EXISTED_EMAIL_ADDRESS).
                 enterLoginPassword(EXISTED_PASSWORD).
                 clickOnLoginButton();
+        LogsUtils.info("Fill email, password and click 'Login' button");
+
         Assert.assertTrue(new P01_HomePage(getDriver()).verifyLoggedInUsernameIsVisible());
+        LogsUtils.info("Verify 'Logged in as username' at top");
+
 
         new P06_ProductsPage(getDriver()).
                 addRandomProducts(3,34).
                 clickOnCartButton();
+        LogsUtils.info("Add products to cart & Click 'Cart' button");
+
         Assert.assertTrue(new P08_CartPage(getDriver()).verifyCartPageIsDisplayed());
+        LogsUtils.info("Verify that cart page is displayed");
+
         productsNames_cartPage = new P08_CartPage(getDriver()).getProductsNames_CartPage();
         productsPrices_cartPage = new P08_CartPage(getDriver()).getPricesOfProducts_CartPage();
         productsQuantities_cartPage = new P08_CartPage(getDriver()).getQuantityOfProducts_CartPage();
         productsTotalPrices_cartPage = new P08_CartPage(getDriver()).getTotalPricesOfProducts_CartPage();
 
         new P08_CartPage(getDriver()).clickOnProceedToCheckoutButton();
+        LogsUtils.info("Click Proceed To Checkout");
+
         yourDeliveryAddress = new P09_Checkoutpage(getDriver()).getDeliveryAddressData();
         yourBillingAddress = new P09_Checkoutpage(getDriver()).getBillingAddressData();
         Assert.assertEquals(yourDeliveryAddress.get(0), "YOUR DELIVERY ADDRESS");
@@ -113,23 +125,24 @@ public class TC16_PlaceOrder_LoginBeforeCheckout {
            Assert.assertEquals(productsQuantities_CheckoutPage.get(i), productsQuantities_cartPage.get(i));
            Assert.assertEquals(productsTotalPrices_CheckoutPage.get(i), productsTotalPrices_cartPage.get(i));
        }
+        LogsUtils.info("Verify Address Details and Review Your Order");
+
 
         new P09_Checkoutpage(getDriver()).enterCommentAndPlaceOrder("your order is ready").
                 fillPaymentDetails();
+        LogsUtils.info("Enter description in comment text area and click 'Place Order' & " +
+                "Enter payment details: Name on Card, Card Number, CVC, Expiration date & " +
+                "Click 'Pay and Confirm Order' button");
 
         Assert.assertTrue(new P10_PaymentPage(getDriver()).getSuccessMessageText());
-
-
-
-
-
+        LogsUtils.info("Verify success message 'Your order has been placed successfully!'");
 
     }
 
 
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
