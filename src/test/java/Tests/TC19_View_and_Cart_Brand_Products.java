@@ -42,13 +42,21 @@ public class TC19_View_and_Cart_Brand_Products {
 
 
         new P01_HomePage(getDriver()).clickOnProductsButton();
+        LogsUtils.info("Click on 'Products' button");
+
         Assert.assertTrue(new P06_ProductsPage(getDriver()).verifyBrandsAreVisible());
+        LogsUtils.info("Verify that Brands are visible on left side bar");
+
         ProductsPageNames = new P06_ProductsPage(getDriver()).getProductNames();
 
 
         new P06_ProductsPage(getDriver()).clickOnPoloBrand();
+        LogsUtils.info("Click on any brand name ==> Polo brand for example");
+
         Assert.assertEquals(new P06_ProductsPage(getDriver()).getTheTitleOfPoloBrandPage(),"BRAND - POLO PRODUCTS");
         Assert.assertTrue(new P06_ProductsPage(getDriver()).verifyProductsListIsVisible());
+
+
         PoloBrandProducts = new P06_ProductsPage(getDriver()).getProductNames();
 
         for(int i=0 ; i<PoloBrandProducts.size() ; i++){
@@ -58,10 +66,12 @@ public class TC19_View_and_Cart_Brand_Products {
                 }
             }
         }
-
+        LogsUtils.info("Verify that user is navigated to brand page and brand products are displayed");
 
 
         new P06_ProductsPage(getDriver()).clickOnMadameBrand();
+        LogsUtils.info("On left side bar, click on any other brand link (Madame brand for example)");
+
         Assert.assertEquals(new P06_ProductsPage(getDriver()).getTheTitleOfMadameBrandPage(),"BRAND - MADAME PRODUCTS");
         Assert.assertTrue(new P06_ProductsPage(getDriver()).verifyProductsListIsVisible());
         MadameBrandProducts = new P06_ProductsPage(getDriver()).getProductNames();
@@ -74,6 +84,7 @@ public class TC19_View_and_Cart_Brand_Products {
                 }
             }
         }
+        LogsUtils.info("Verify that user is navigated to that brand page and can see products");
 
     }
 
