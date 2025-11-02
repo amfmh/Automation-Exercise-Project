@@ -21,7 +21,7 @@ import static Utilities.DataUtils.getPropertyValue;
 public class TC18_View_Category_Products {
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -35,23 +35,30 @@ public class TC18_View_Category_Products {
     public void viewCategoryProducts(){
 
         Assert.assertTrue(new P01_HomePage(getDriver()).verifyCategoriesAreVisible());
+        LogsUtils.info("Verify that categories are visible on left side bar");
 
         new P01_HomePage(getDriver())
                 .clickOnWomenCategory()
                 .clickOnDressCategory();
+        LogsUtils.info("Click on 'Women' category & Click on any category link under 'Women' category, for example: Dress");
+
         Assert.assertTrue(new P06_ProductsPage(getDriver()).verifyWomenDressCategoryPageIsVisible());
         Assert.assertEquals(new P06_ProductsPage(getDriver()).getTheTitleOfWomenDressCategoryPage(),"WOMEN - DRESS PRODUCTS");
+        LogsUtils.info("Verify that category page is displayed and confirm text 'WOMEN - DRESS PRODUCTS'");
 
         new P06_ProductsPage(getDriver())
                 .clickOnMenCategory()
                 .clickOnMenTshirtsCategory();
+        LogsUtils.info("On left side bar, click on any sub-category link of 'Men' category ==> Tshirts for example");
+
         Assert.assertTrue(new P06_ProductsPage(getDriver()).verifyMenTshirtsCategoryPageIsVisible());
+        LogsUtils.info("Verify that user is navigated to that category page");
 
 
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
