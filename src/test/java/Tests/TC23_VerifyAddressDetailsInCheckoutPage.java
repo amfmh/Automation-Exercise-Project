@@ -56,8 +56,10 @@ public class TC23_VerifyAddressDetailsInCheckoutPage {
 
 
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
+        LogsUtils.info("Verify that home page is visible successfully");
 
         new P01_HomePage(getDriver()).clickOnSignupLoginButton();
+        LogsUtils.info("Click 'Signup / Login' button");
 
         new P02_LoginSignupPage(getDriver()).
                 enterSignupUsername(SIGNUP_USERNAME).
@@ -66,22 +68,27 @@ public class TC23_VerifyAddressDetailsInCheckoutPage {
         new P03_SignupPage(getDriver()).
                 fillAccountDetails(PASSWORD, FIRSTNAME, LASTNAME, COMPANY, ADDRESS1, ADDRESS2, STATE, CITY, ZIPCODE, MOBILE_NUMBER).
                 clickOnCreateAccountButton();
+        LogsUtils.info("Fill all details in Signup and create account");
 
         Assert.assertTrue(new P04_AccountCreatedPage(getDriver()).verifyAccountCreatedLabelExisted());
         new P04_AccountCreatedPage(getDriver()).clickOnContinueButton();
+        LogsUtils.info("Verify 'ACCOUNT CREATED!' and click 'Continue' button");
 
         Assert.assertTrue(new P01_HomePage(getDriver()).verifyLoggedInUsernameIsVisible());
+        LogsUtils.info("Verify ' Logged in as username' at top");
 
         new P01_HomePage(getDriver()).clickOnProductsButton();
         new P06_ProductsPage(getDriver()).
                 addRandomProducts(3,34).
-
                 clickOnCartButton();
+        LogsUtils.info("Add products to cart & Click 'Cart' button");
 
         Assert.assertTrue(new P08_CartPage(getDriver()).verifyCartPageIsDisplayed());
+        LogsUtils.info("Verify that cart page is displayed");
 
 
         new P08_CartPage(getDriver()).clickOnProceedToCheckoutButton();
+        LogsUtils.info("Click Proceed To Checkout");
 
         yourDeliveryAddress = new P09_Checkoutpage(getDriver()).getDeliveryAddressData();
         yourBillingAddress = new P09_Checkoutpage(getDriver()).getBillingAddressData();
@@ -102,13 +109,15 @@ public class TC23_VerifyAddressDetailsInCheckoutPage {
         Assert.assertEquals(yourDeliveryAddress.get(5) , no5);
         Assert.assertEquals(yourDeliveryAddress.get(6) , no6);
         Assert.assertEquals(yourDeliveryAddress.get(7) , no7);
+        LogsUtils.info("Verify that the delivery address is same address filled at the time registration of account" +
+                "Verify that the billing address is same address filled at the time registration of account");
 
         new P01_HomePage(getDriver()).clickOnDeleteAccountButton();
+        LogsUtils.info("Click 'Delete Account' button");
 
         Assert.assertTrue(new P05_AccountDeletedPage(getDriver()).verifyAccountDeletedLabelExisted());
         new P05_AccountDeletedPage(getDriver()).clickOnContinueButton();
-
-
+        LogsUtils.info("Verify 'ACCOUNT DELETED!' and click 'Continue' button");
 
     }
 
