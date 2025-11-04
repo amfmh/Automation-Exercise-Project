@@ -41,7 +41,7 @@ public class TC23_VerifyAddressDetailsInCheckoutPage {
 
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -122,7 +122,7 @@ public class TC23_VerifyAddressDetailsInCheckoutPage {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }

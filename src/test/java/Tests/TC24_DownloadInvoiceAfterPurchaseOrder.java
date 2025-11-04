@@ -38,7 +38,7 @@ public class TC24_DownloadInvoiceAfterPurchaseOrder {
     private static List<String> yourDeliveryAddress;
     private static List<String> yourBillingAddress;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -53,18 +53,23 @@ public class TC24_DownloadInvoiceAfterPurchaseOrder {
 
 
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
+        LogsUtils.info("Verify that home page is visible successfully");
 
         new P01_HomePage(getDriver()).clickOnProductsButton();
 
         new P06_ProductsPage(getDriver()).
                 addRandomProducts(3,34).
                 clickOnCartButton();
+        LogsUtils.info("Add products to cart & Click 'Cart' button");
 
         Assert.assertTrue(new P08_CartPage(getDriver()).verifyCartPageIsDisplayed());
+        LogsUtils.info("Verify that cart page is displayed");
 
         new P08_CartPage(getDriver()).clickOnProceedToCheckoutButton();
+        LogsUtils.info("Click Proceed To Checkout");
 
         new P08_CartPage(getDriver()).clickOnRegisterLoginButton();
+        LogsUtils.info("Click 'Register / Login' button");
 
         new P02_LoginSignupPage(getDriver()).
                 enterSignupUsername(SIGNUP_USERNAME).
@@ -73,15 +78,20 @@ public class TC24_DownloadInvoiceAfterPurchaseOrder {
         new P03_SignupPage(getDriver()).
                 fillAccountDetails(PASSWORD, FIRSTNAME, LASTNAME, COMPANY, ADDRESS1, ADDRESS2, STATE, CITY, ZIPCODE, MOBILE_NUMBER).
                 clickOnCreateAccountButton();
+        LogsUtils.info("Fill all details in Signup and create account");
 
         Assert.assertTrue(new P04_AccountCreatedPage(getDriver()).verifyAccountCreatedLabelExisted());
         new P04_AccountCreatedPage(getDriver()).clickOnContinueButton();
+        LogsUtils.info("Verify 'ACCOUNT CREATED!' and click 'Continue' button");
 
         Assert.assertTrue(new P01_HomePage(getDriver()).verifyLoggedInUsernameIsVisible());
+        LogsUtils.info("Verify ' Logged in as username' at top");
 
         new P01_HomePage(getDriver()).clickOnCartButton();
+        LogsUtils.info("Click 'Cart' button");
 
         new P08_CartPage(getDriver()).clickOnProceedToCheckoutButton();
+        LogsUtils.info("Click 'Proceed To Checkout' button");
 
         yourDeliveryAddress = new P09_Checkoutpage(getDriver()).getDeliveryAddressData();
         yourBillingAddress = new P09_Checkoutpage(getDriver()).getBillingAddressData();
@@ -90,31 +100,38 @@ public class TC24_DownloadInvoiceAfterPurchaseOrder {
         for(int i=1 ; i<8 ; i++){
             Assert.assertEquals(yourDeliveryAddress.get(i) , yourBillingAddress.get(i));
         }
+        LogsUtils.info("Verify Address Details and Review Your Order");
 
         new P09_Checkoutpage(getDriver()).
                 enterCommentAndPlaceOrder("your order is ready").
                 fillPaymentDetails();
+        LogsUtils.info("Enter description in comment text area and click 'Place Order'" +
+                "Enter payment details: Name on Card, Card Number, CVC, Expiration date" +
+                "Click 'Pay and Confirm Order' button");
 
         Assert.assertTrue(new P10_PaymentPage(getDriver()).getSuccessMessageText());
+        LogsUtils.info("Verify success message 'Your order has been placed successfully!'");
 
         new P10_PaymentPage(getDriver()).clickOnDownloadInvoiceButton();
 
         Assert.assertTrue(new P10_PaymentPage(getDriver()).fileExists(DataUtils.getPropertyValue("environment", "FILE_DOWNLOAD_PATH")));
+        LogsUtils.info("Click 'Download Invoice' button and verify invoice is downloaded successfully.");
 
         new P10_PaymentPage(getDriver()).
                 clickOnContinueButton().
                 clickOnDeleteAccountButton();
+        LogsUtils.info("Click 'Continue' button & Click 'Delete Account' button");
 
         Assert.assertTrue(new P05_AccountDeletedPage(getDriver()).verifyAccountDeletedLabelExisted());
 
         new P05_AccountDeletedPage(getDriver()).clickOnContinueButton();
-
+        LogsUtils.info("Verify 'ACCOUNT DELETED!' and click 'Continue' button");
 
     }
 
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }

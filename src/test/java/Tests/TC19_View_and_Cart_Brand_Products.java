@@ -27,7 +27,7 @@ public class TC19_View_and_Cart_Brand_Products {
     private static List<String> MadameBrandProducts ;
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         setupDriver(getPropertyValue("environment", "Browser"));
         LogsUtils.info("Edge driver is opened");
@@ -89,7 +89,7 @@ public class TC19_View_and_Cart_Brand_Products {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
