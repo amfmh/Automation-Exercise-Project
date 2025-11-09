@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
-<suite name="Login Suite">
+<suite name="Register Suite">
     <listeners>
         <listener class-name="Listeners.ITestResultListenerClass"/>
         <listener class-name="Listeners.IInvokedMethodListenerClass"/>
     </listeners>
-    <test name="Login Test">
+    <test name="Register User">
         <classes>
-            <class name="Tests.TC01_LoginTest"/>
+            <class name="Tests.TC01_RegisterUser"/>
         </classes>
     </test>
 </suite>

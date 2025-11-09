@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
-<suite name="Landing Suite">
+<suite name="Login With Incorrect Account Suite">
     <listeners>
         <listener class-name="Listeners.ITestResultListenerClass"/>
         <listener class-name="Listeners.IInvokedMethodListenerClass"/>
     </listeners>
-    <test name="Landing Test">
+    <test name="Login With Incorrect Account Test">
         <classes>
-            <class name="Tests.TC02_LandingTest"/>
+            <class name="Tests.TC03_LoginUserWithIncorrectEmailAndPassword"/>
         </classes>
     </test>
 </suite>

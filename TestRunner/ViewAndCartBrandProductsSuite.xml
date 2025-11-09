@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
-<suite name="Finishing Suite">
+<suite name="ViewAndCartBrandProducts Suite">
     <listeners>
         <listener class-name="Listeners.ITestResultListenerClass"/>
         <listener class-name="Listeners.IInvokedMethodListenerClass"/>
     </listeners>
-    <test name="Finishing Test">
+    <test name="ViewAndCartBrandProducts Test">
         <classes>
-            <class name="Tests.TC06_FinishingOrderTest"/>
+            <class name="Tests.TC19_View_and_Cart_Brand_Products"/>
         </classes>
     </test>
 </suite>

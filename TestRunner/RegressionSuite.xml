@@ -6,12 +6,18 @@
     </listeners>
     <test name="Regression Test">
         <classes>
-            <class name="Tests.TC01_LoginTest"/>
-            <class name="Tests.TC02_LandingTest"/>
-            <class name="Tests.TC03_CartTest"/>
-            <class name="Tests.TC04_CheckoutTest"/>
-            <class name="Tests.TC05_OverviewTest"/>
-            <class name="Tests.TC06_FinishingOrderTest"/>
+            <class name="Tests.TC01_RegisterUser"/>
+            <class name="Tests.TC03_LoginUserWithIncorrectEmailAndPassword"/>
+            <class name="Tests.TC04_LogoutUser"/>
+            <class name="Tests.TC08_VerifyAllProductsAndProductDetailPage"/>
+            <class name="Tests.TC09_SearchProduct"/>
+            <class name="Tests.TC12_AddProductsInCart"/>
+            <class name="Tests.TC13_VerifyProductQuantityInCart"/>
+            <class name="Tests.TC16_PlaceOrder_LoginBeforeCheckout"/>
+            <class name="Tests.TC18_View_Category_Products"/>
+            <class name="Tests.TC19_View_and_Cart_Brand_Products"/>
+            <class name="Tests.TC23_VerifyAddressDetailsInCheckoutPage"/>
+            <class name="Tests.TC24_DownloadInvoiceAfterPurchaseOrder"/>
         </classes>
     </test>
 </suite>
