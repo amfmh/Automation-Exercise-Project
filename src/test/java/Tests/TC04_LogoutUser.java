@@ -7,6 +7,7 @@ import Pages.P01_HomePage;
 import Pages.P02_LoginSignupPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,6 +21,9 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getPropertyValue;
 import static Utilities.Utility.VerifyUrl;
 
+
+@Epic("Regression Tests")
+@Feature("User")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC04_LogoutUser {
 
@@ -37,7 +41,20 @@ public class TC04_LogoutUser {
     }
 
 
-    @Test
+    @Test(description = "Test Case 4: Logout User")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Logout User")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Verify that home page is visible successfully
+            4. Click on 'Signup / Login' button
+            5. Verify 'Login to your account' is visible
+            6. Enter correct email address and password
+            7. Click 'login' button
+            8. Verify that 'Logged in as username' is visible
+            9. Click 'Logout' button
+            10. Verify that user is navigated to login page""")
     public void logoutUser() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(),DataUtils.getPropertyValue("environment","HOME_URL")));
         LogsUtils.info("Verify that home page is visible successfully");

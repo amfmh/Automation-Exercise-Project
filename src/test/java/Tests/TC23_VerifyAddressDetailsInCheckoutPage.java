@@ -6,6 +6,7 @@ import Pages.*;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,6 +22,9 @@ import static Utilities.DataUtils.getJsonData;
 import static Utilities.DataUtils.getPropertyValue;
 import static Utilities.Utility.VerifyUrl;
 
+
+@Epic("Regression Tests")
+@Feature("Verify")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC23_VerifyAddressDetailsInCheckoutPage {
     private final String SIGNUP_USERNAME = "name" + Utility.getTimeStamp();
@@ -51,7 +55,24 @@ public class TC23_VerifyAddressDetailsInCheckoutPage {
     }
 
 
-    @Test
+    @Test(description = "Test Case 23: Verify address details in checkout page")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Verify address details in checkout page")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Verify that home page is visible successfully
+            4. Click 'Signup / Login' button
+            5. Fill all details in Signup and create account
+            6. Verify 'ACCOUNT CREATED!' and click 'Continue' button
+            7. Verify ' Logged in as username' at top
+            8. Add products to cart
+            9. Click 'Cart' button
+            10. Verify that cart page is displayed
+            11. Click Proceed To Checkout
+            12. Verify that the delivery address and the billing address is same address filled at the time registration of account
+            13. Click 'Delete Account' button
+            14. Verify 'ACCOUNT DELETED!' and click 'Continue' button""")
     public void verifyAddressDetailsInCheckoutPage() throws IOException {
 
 

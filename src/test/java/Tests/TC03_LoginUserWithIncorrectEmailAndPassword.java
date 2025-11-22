@@ -8,6 +8,7 @@ import Pages.P02_LoginSignupPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
 import Utilities.Utility;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,7 +22,8 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getPropertyValue;
 import static Utilities.Utility.VerifyUrl;
 
-
+@Epic("Regression Tests")
+@Feature("User")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC03_LoginUserWithIncorrectEmailAndPassword {
 
@@ -40,7 +42,18 @@ public class TC03_LoginUserWithIncorrectEmailAndPassword {
     }
 
 
-    @Test
+    @Test(description = "Test Case 3: Login User with incorrect email and password")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Login User with incorrect email and password")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Verify that home page is visible successfully
+            4. Click on 'Signup / Login' button
+            5. Verify 'Login to your account' is visible
+            6. Enter incorrect email address and password
+            7. Click 'login' button
+            8. Verify error 'Your email or password is incorrect!' is visible""")
     public void LoginUserWithIncorrectEmailAndPassword() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
         LogsUtils.info("Verify that home page is visible successfully");

@@ -1,0 +1,2 @@
+[INFO] 22-11-2025 22:00:40 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:45)] - Edge driver is opened
+[INFO] 22-11-2025 22:00:41 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:47)] - Page is redirected to the URL

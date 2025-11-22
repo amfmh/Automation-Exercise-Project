@@ -6,6 +6,7 @@ import Pages.P01_HomePage;
 import Pages.P06_ProductsPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,6 +25,9 @@ import static Utilities.DataUtils.getPropertyValue;
 import static Utilities.Utility.*;
 import static org.testng.Assert.assertEquals;
 
+
+@Epic("Regression Tests")
+@Feature("Search")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC09_SearchProduct {
     private final By searchedProductsLabel = By.cssSelector(".title.text-center");
@@ -42,7 +46,18 @@ public class TC09_SearchProduct {
     }
 
 
-    @Test
+    @Test(description = "Test Case 9: Search Product")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Search Product")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Verify that home page is visible successfully
+            4. Click on 'Products' button
+            5. Verify user is navigated to ALL PRODUCTS page successfully
+            6. Enter product name in search input and click search button
+            7. Verify 'SEARCHED PRODUCTS' is visible
+            8. Verify all the products related to search are visible""")
     public void VerifyAllProductsAndProductDetailPage() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
         LogsUtils.info("Verify that home page is visible successfully");

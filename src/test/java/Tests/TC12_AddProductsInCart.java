@@ -7,6 +7,7 @@ import Pages.P06_ProductsPage;
 import Pages.P08_CartPage;
 import Utilities.LogsUtils;
 
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,6 +22,9 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getPropertyValue;
 import static Utilities.Utility.VerifyUrl;
 
+
+@Epic("Regression Tests")
+@Feature("Cart")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC12_AddProductsInCart {
 
@@ -43,7 +47,20 @@ public class TC12_AddProductsInCart {
     }
 
 
-    @Test
+    @Test(description = "Test Case 12: Add Products in Cart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Add Products in Cart")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Verify that home page is visible successfully
+            4. Click 'Products' button
+            5. Hover over first product and click 'Add to cart'
+            6. Click 'Continue Shopping' button
+            7. Hover over second product and click 'Add to cart'
+            8. Click 'View Cart' button
+            9. Verify both products are added to Cart
+            10. Verify their prices, quantity and total price""")
     public void addProductsInCart() throws IOException {
 
         Assert.assertTrue(VerifyUrl(getDriver(), getPropertyValue("environment","HOME_URL")));

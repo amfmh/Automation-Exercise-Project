@@ -7,6 +7,7 @@ import Pages.P06_ProductsPage;
 import Pages.P07_ProductDetailsPage;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,6 +22,8 @@ import static Utilities.DataUtils.getPropertyValue;
 import static Utilities.Utility.VerifyUrl;
 
 
+@Epic("Regression Tests")
+@Feature("Verify")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC08_VerifyAllProductsAndProductDetailPage {
 
@@ -36,7 +39,19 @@ public class TC08_VerifyAllProductsAndProductDetailPage {
     }
 
 
-    @Test
+    @Test(description = "Test Case 8: Verify All Products and product detail page")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Verify All Products and product detail page")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Verify that home page is visible successfully
+            4. Click on 'Products' button
+            5. Verify user is navigated to ALL PRODUCTS page successfully
+            6. The products list is visible
+            7. Click on 'View Product' of first product
+            8. User is landed to product detail page
+            9. Verify that detail detail is visible: product name, category, price, availability, condition, brand""")
     public void VerifyAllProductsAndProductDetailPage() throws IOException {
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));
         LogsUtils.info("Verify that home page is visible successfully");

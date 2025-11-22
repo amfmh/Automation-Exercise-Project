@@ -1,0 +1,34 @@
+[INFO] 22-11-2025 22:00:40 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:45)] - Edge driver is opened
+[INFO] 22-11-2025 22:00:41 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:47)] - Page is redirected to the URL
+[INFO] 22-11-2025 22:00:42 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test Case registerUser started
+[INFO] 22-11-2025 22:00:48 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:75)] - Home page is opened
+[INFO] 22-11-2025 22:00:49 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:79)] - Signup / Login button is clicked
+[INFO] 22-11-2025 22:00:49 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:81)] - page 'New User Signup!' is visible
+[INFO] 22-11-2025 22:00:50 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:88)] - Verify that 'ENTER ACCOUNT INFORMATION' is visible
+[INFO] 22-11-2025 22:00:53 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:94)] - Verify that 'ACCOUNT CREATED!' is visible
+[INFO] 22-11-2025 22:00:53 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:98)] - Verify that 'Logged in as username' is visible
+[INFO] 22-11-2025 22:00:54 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:102)] - Verify that 'ACCOUNT DELETED!' is visible
+[INFO] 22-11-2025 22:00:55 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:105)] - 'continue' button is clicked and the website is returned to the home page
+[INFO] 22-11-2025 22:00:55 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case registerUser passed
+[INFO] 22-11-2025 22:00:57 [main] [Tests.TC03_LoginUserWithIncorrectEmailAndPassword.setup(TC03_LoginUserWithIncorrectEmailAndPassword.java:38)] - Edge driver is opened
+[INFO] 22-11-2025 22:01:01 [main] [Tests.TC03_LoginUserWithIncorrectEmailAndPassword.setup(TC03_LoginUserWithIncorrectEmailAndPassword.java:40)] - Page is redirected to the URL
+[INFO] 22-11-2025 22:01:01 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test Case LoginUserWithIncorrectEmailAndPassword started
+[INFO] 22-11-2025 22:01:01 [main] [Tests.TC03_LoginUserWithIncorrectEmailAndPassword.LoginUserWithIncorrectEmailAndPassword(TC03_LoginUserWithIncorrectEmailAndPassword.java:59)] - Verify that home page is visible successfully
+[INFO] 22-11-2025 22:01:02 [main] [Tests.TC03_LoginUserWithIncorrectEmailAndPassword.LoginUserWithIncorrectEmailAndPassword(TC03_LoginUserWithIncorrectEmailAndPassword.java:63)] - Click on 'Signup / Login' button
+[INFO] 22-11-2025 22:01:02 [main] [Tests.TC03_LoginUserWithIncorrectEmailAndPassword.LoginUserWithIncorrectEmailAndPassword(TC03_LoginUserWithIncorrectEmailAndPassword.java:65)] - Verify 'Login to your account' is visible
+[INFO] 22-11-2025 22:01:03 [main] [Tests.TC03_LoginUserWithIncorrectEmailAndPassword.LoginUserWithIncorrectEmailAndPassword(TC03_LoginUserWithIncorrectEmailAndPassword.java:72)] - Enter incorrect email address and password & Click 'login' button
+[INFO] 22-11-2025 22:01:03 [main] [Tests.TC03_LoginUserWithIncorrectEmailAndPassword.LoginUserWithIncorrectEmailAndPassword(TC03_LoginUserWithIncorrectEmailAndPassword.java:74)] - Verify error 'Your email or password is incorrect!' is visible
+[INFO] 22-11-2025 22:01:03 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case LoginUserWithIncorrectEmailAndPassword passed
+[INFO] 22-11-2025 22:01:05 [main] [Tests.TC04_LogoutUser.setup(TC04_LogoutUser.java:37)] - Edge driver is opened
+[INFO] 22-11-2025 22:01:09 [main] [Tests.TC04_LogoutUser.setup(TC04_LogoutUser.java:39)] - Page is redirected to the URL
+[INFO] 22-11-2025 22:01:09 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test Case logoutUser started
+[INFO] 22-11-2025 22:01:09 [main] [Tests.TC04_LogoutUser.logoutUser(TC04_LogoutUser.java:60)] - Verify that home page is visible successfully
+[INFO] 22-11-2025 22:01:10 [main] [Tests.TC04_LogoutUser.logoutUser(TC04_LogoutUser.java:63)] - Click on 'Signup / Login' button
+[INFO] 22-11-2025 22:01:10 [main] [Tests.TC04_LogoutUser.logoutUser(TC04_LogoutUser.java:65)] - Verify 'Login to your account' is visible
+[INFO] 22-11-2025 22:01:11 [main] [Tests.TC04_LogoutUser.logoutUser(TC04_LogoutUser.java:72)] - Enter correct email address and password & Click 'login' button
+[INFO] 22-11-2025 22:01:11 [main] [Tests.TC04_LogoutUser.logoutUser(TC04_LogoutUser.java:74)] - Verify that 'Logged in as username' is visible
+[INFO] 22-11-2025 22:01:12 [main] [Tests.TC04_LogoutUser.logoutUser(TC04_LogoutUser.java:77)] - Click 'Logout' button
+[INFO] 22-11-2025 22:01:12 [main] [Tests.TC04_LogoutUser.logoutUser(TC04_LogoutUser.java:79)] - Verify that user is navigated to login page
+[INFO] 22-11-2025 22:01:12 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case logoutUser passed
+[INFO] 22-11-2025 22:01:15 [main] [Tests.TC08_VerifyAllProductsAndProductDetailPage.setup(TC08_VerifyAllProductsAndProductDetailPage.java:35)] - Edge driver is opened
+[INFO] 22-11-2025 22:01:16 [main] [Tests.TC08_VerifyAllProductsAndProductDetailPage.setup(TC08_VerifyAllProductsAndProductDetailPage.java:37)] - Page is redirected to the URL

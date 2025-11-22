@@ -5,6 +5,7 @@ import Listeners.ITestResultListenerClass;
 import Pages.*;
 import Utilities.DataUtils;
 import Utilities.LogsUtils;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,7 +21,8 @@ import static Utilities.DataUtils.getJsonData;
 import static Utilities.DataUtils.getPropertyValue;
 import static Utilities.Utility.VerifyUrl;
 
-
+@Epic("Regression Tests")
+@Feature("Place Order")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC16_PlaceOrder_LoginBeforeCheckout {
 
@@ -49,7 +51,25 @@ public class TC16_PlaceOrder_LoginBeforeCheckout {
 
 
 
-    @Test
+    @Test(description = "Test Case 16: Place Order: Login before Checkout")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Place Order: Login before Checkout")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Verify that home page is visible successfully
+            4. Click 'Signup / Login' button
+            5. Fill email, password and click 'Login' button
+            6. Verify 'Logged in as username' at top
+            7. Add products to cart
+            8. Click 'Cart' button
+            9. Verify that cart page is displayed
+            10. Click Proceed To Checkout
+            11. Verify Address Details and Review Your Order
+            12. Enter description in comment text area and click 'Place Order'
+            13. Enter payment details: Name on Card, Card Number, CVC, Expiration date
+            14. Click 'Pay and Confirm Order' button
+            15. Verify success message 'Congratulations! Your order has been confirmed!'""")
     public void placeOrderLoginBeforeCheckout() throws IOException {
 
         Assert.assertTrue(VerifyUrl(getDriver(), DataUtils.getPropertyValue("environment","HOME_URL")));

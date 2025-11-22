@@ -5,6 +5,7 @@ import Listeners.ITestResultListenerClass;
 import Pages.P01_HomePage;
 import Pages.P06_ProductsPage;
 import Utilities.LogsUtils;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +20,8 @@ import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getPropertyValue;
 
 
+@Epic("Regression Tests")
+@Feature("Products")
 @Listeners({IInvokedMethodListenerClass.class, ITestResultListenerClass.class})
 public class TC19_View_and_Cart_Brand_Products {
 
@@ -37,7 +40,18 @@ public class TC19_View_and_Cart_Brand_Products {
     }
 
 
-    @Test
+    @Test(description = "Test Case 19: View & Cart Brand Products")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("View & Cart Brand Products")
+    @Description("""
+            1. Launch browser
+            2. Navigate to url 'http://automationexercise.com'
+            3. Click on 'Products' button
+            4. Verify that Brands are visible on left side bar
+            5. Click on any brand name
+            6. Verify that user is navigated to brand page and brand products are displayed
+            7. On left side bar, click on any other brand link
+            8. Verify that user is navigated to that brand page and can see products""")
     public void View_and_Cart_Brand_Products(){
 
 
