@@ -43,7 +43,7 @@
     <profile>
         <id>RegressionProfile</id>
         <build>
-            <directory>test-outputs/target</directory>
+            <directory>test-outputs/allure-results</directory>
             <plugins>
 
 
