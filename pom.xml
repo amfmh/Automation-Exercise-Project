@@ -12,7 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <seleniumVersion>4.18.1</seleniumVersion>
+    <seleniumVersion>4.39.0</seleniumVersion>
     <testNGVersion>7.9.0</testNGVersion>
     <slf4jVersion>2.0.12</slf4jVersion>
     <slf4jVersionAPI>2.0.12</slf4jVersionAPI>
@@ -25,7 +25,18 @@
     <shutterBugVersion>1.6</shutterBugVersion>
       <suite.regression>TestRunner/RegressionSuite.xml</suite.regression>
   </properties>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>15</source>
+                    <target>15</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
     <profiles>
