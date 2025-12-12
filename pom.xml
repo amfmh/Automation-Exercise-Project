@@ -25,18 +25,7 @@
     <shutterBugVersion>1.6</shutterBugVersion>
       <suite.regression>TestRunner/RegressionSuite.xml</suite.regression>
   </properties>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>15</source>
-                    <target>15</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
 
 
     <profiles>
