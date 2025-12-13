@@ -1,0 +1,14 @@
+Pages\P05_AccountDeletedPage.class
+Utilities\Utility.class
+Pages\P04_AccountCreatedPage.class
+Pages\P09_Checkoutpage.class
+Utilities\DataUtils.class
+DriverFactory\DriverFactory.class
+Pages\P03_SignupPage.class
+Pages\P02_LoginSignupPage.class
+Pages\P10_PaymentPage.class
+Utilities\LogsUtils.class
+Pages\P06_ProductsPage.class
+Pages\P01_HomePage.class
+Pages\P07_ProductDetailsPage.class
+Pages\P08_CartPage.class

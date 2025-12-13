@@ -1,0 +1,15 @@
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Listeners\IInvokedMethodListenerClass.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Listeners\ITestResultListenerClass.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC01_RegisterUser.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC02_LoginUserWithCorrectEmailAndPassword.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC03_LoginUserWithIncorrectEmailAndPassword.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC04_LogoutUser.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC08_VerifyAllProductsAndProductDetailPage.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC09_SearchProduct.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC12_AddProductsInCart.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC13_VerifyProductQuantityInCart.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC16_PlaceOrder_LoginBeforeCheckout.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC18_View_Category_Products.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC19_View_and_Cart_Brand_Products.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC23_VerifyAddressDetailsInCheckoutPage.java
+F:\Testing Automation Projects\AutomationExerciseProject\src\test\java\Tests\TC24_DownloadInvoiceAfterPurchaseOrder.java

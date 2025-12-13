@@ -1,1 +1,1 @@
-[]
+[{"uid":"b20a62ead676c0e","name":"Test Case 1: Register User","time":{"start":1765623794657,"stop":1765623794708,"duration":51},"status":"skipped","severity":"critical"},{"uid":"8cf8dd29840b69e1","name":"setup","time":{"start":1765623794596,"stop":1765623794599,"duration":3},"status":"broken","severity":"normal"}]

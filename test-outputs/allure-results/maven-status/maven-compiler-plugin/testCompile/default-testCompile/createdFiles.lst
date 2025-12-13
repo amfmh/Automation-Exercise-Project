@@ -1,0 +1,15 @@
+Tests\TC09_SearchProduct.class
+Tests\TC18_View_Category_Products.class
+Tests\TC16_PlaceOrder_LoginBeforeCheckout.class
+Listeners\ITestResultListenerClass.class
+Tests\TC02_LoginUserWithCorrectEmailAndPassword.class
+Tests\TC13_VerifyProductQuantityInCart.class
+Tests\TC23_VerifyAddressDetailsInCheckoutPage.class
+Tests\TC08_VerifyAllProductsAndProductDetailPage.class
+Tests\TC24_DownloadInvoiceAfterPurchaseOrder.class
+Tests\TC03_LoginUserWithIncorrectEmailAndPassword.class
+Tests\TC12_AddProductsInCart.class
+Tests\TC19_View_and_Cart_Brand_Products.class
+Tests\TC01_RegisterUser.class
+Listeners\IInvokedMethodListenerClass.class
+Tests\TC04_LogoutUser.class
