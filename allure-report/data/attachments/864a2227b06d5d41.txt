@@ -1,3 +1,0 @@
-[INFO] 13-12-2025 12:58:13 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:45)] - Edge driver is opened
-[INFO] 13-12-2025 13:01:13 [main] [Listeners.IInvokedMethodListenerClass.afterInvocation(IInvokedMethodListenerClass.java:33)] - Test Case setup failed
-[INFO] 13-12-2025 13:03:14 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test Case registerUser started

@@ -19,12 +19,13 @@
     <log4jVersion>2.23.0</log4jVersion>
     <gsonVersion>2.13.2</gsonVersion>
     <fakerVersion>1.0.2</fakerVersion>
-    <allureVersio>2.25.0</allureVersio>
+    <allureVersio>2.27.0</allureVersio>
     <commonIO>2.15.0</commonIO>
     <aspectj.version>1.9.21.1</aspectj.version>
     <shutterBugVersion>1.6</shutterBugVersion>
       <suite.regression>TestRunner/RegressionSuite.xml</suite.regression>
       <suite.register>TestRunner/RegisterSuite.xml</suite.register>
+      <allure.results.directory>test-outputs/allure-results</allure.results.directory>
   </properties>
     <build>
         <plugins>

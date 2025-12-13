@@ -1,0 +1,12 @@
+[INFO] 13-12-2025 13:32:31 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:45)] - Edge driver is opened
+[INFO] 13-12-2025 13:32:54 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:47)] - Page is redirected to the URL
+[INFO] 13-12-2025 13:32:54 [main] [Listeners.ITestResultListenerClass.onTestStart(ITestResultListenerClass.java:10)] - Test Case registerUser started
+[INFO] 13-12-2025 13:32:54 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:75)] - Home page is opened
+[INFO] 13-12-2025 13:32:55 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:79)] - Signup / Login button is clicked
+[INFO] 13-12-2025 13:32:55 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:81)] - page 'New User Signup!' is visible
+[INFO] 13-12-2025 13:32:57 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:88)] - Verify that 'ENTER ACCOUNT INFORMATION' is visible
+[INFO] 13-12-2025 13:33:01 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:94)] - Verify that 'ACCOUNT CREATED!' is visible
+[INFO] 13-12-2025 13:33:01 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:98)] - Verify that 'Logged in as username' is visible
+[INFO] 13-12-2025 13:33:02 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:102)] - Verify that 'ACCOUNT DELETED!' is visible
+[INFO] 13-12-2025 13:33:03 [main] [Tests.TC01_RegisterUser.registerUser(TC01_RegisterUser.java:105)] - 'continue' button is clicked and the website is returned to the home page
+[INFO] 13-12-2025 13:33:03 [main] [Listeners.ITestResultListenerClass.onTestSuccess(ITestResultListenerClass.java:14)] - Test Case registerUser passed

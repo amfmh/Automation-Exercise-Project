@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Register User</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Dec 13 12:58:08 EET 2025</td>
+<td>Started on:</td><td>Sat Dec 13 13:32:25 EET 2025</td>
 </tr>
-<tr><td>Total time:</td><td>307 seconds (307187 ms)</td>
+<tr><td>Total time:</td><td>39 seconds (39218 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,65 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Tests.TC01_RegisterUser.setup()'><b>setup</b><br>Test class: Tests.TC01_RegisterUser</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [38805413a16a3a03059d2dddcf718e12, get {url=https://automationexercise.com/}]
-Capabilities {acceptInsecureCerts: true, browserName: MicrosoftEdge, browserVersion: 143.0.3650.80, fedcm:accounts: true, goog:processID: 10444, ms:edgeOptions: {debuggerAddress: localhost:55281}, msedge: {msedgedriverVersion: 143.0.3650.80 (788579717f68..., userDataDir: C:\Users\user\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55281/devtoo..., se:cdpVersion: 143.0.3650.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 38805413a16a3a03059d2dddcf718e12
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:549)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:119)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace1769128714", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1769128714'><pre>org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [38805413a16a3a03059d2dddcf718e12, get {url=https://automationexercise.com/}]
-Capabilities {acceptInsecureCerts: true, browserName: MicrosoftEdge, browserVersion: 143.0.3650.80, fedcm:accounts: true, goog:processID: 10444, ms:edgeOptions: {debuggerAddress: localhost:55281}, msedge: {msedgedriverVersion: 143.0.3650.80 (788579717f68..., userDataDir: C:\Users\user\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55281/devtoo..., se:cdpVersion: 143.0.3650.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 38805413a16a3a03059d2dddcf718e12
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:549)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:119)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-</pre></div></td>
-<td>185</td>
-<td>Tests.TC01_RegisterUser@298d9a05</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -134,52 +77,9 @@ Caused by: java.net.http.HttpTimeoutException: request timed out
 </tr>
 <tr>
 <td title='Tests.TC01_RegisterUser.registerUser()'><b>registerUser</b><br>Test class: Tests.TC01_RegisterUser<br>Test method: Test Case 1: Register User</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [38805413a16a3a03059d2dddcf718e12, get {url=https://automationexercise.com/}]
-Capabilities {acceptInsecureCerts: true, browserName: MicrosoftEdge, browserVersion: 143.0.3650.80, fedcm:accounts: true, goog:processID: 10444, ms:edgeOptions: {debuggerAddress: localhost:55281}, msedge: {msedgedriverVersion: 143.0.3650.80 (788579717f68..., userDataDir: C:\Users\user\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55281/devtoo..., se:cdpVersion: 143.0.3650.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 38805413a16a3a03059d2dddcf718e12
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:549)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:119)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace590486503", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace590486503'><pre>org.openqa.selenium.TimeoutException: java.net.http.HttpTimeoutException: request timed out
-Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [38805413a16a3a03059d2dddcf718e12, get {url=https://automationexercise.com/}]
-Capabilities {acceptInsecureCerts: true, browserName: MicrosoftEdge, browserVersion: 143.0.3650.80, fedcm:accounts: true, goog:processID: 10444, ms:edgeOptions: {debuggerAddress: localhost:55281}, msedge: {msedgedriverVersion: 143.0.3650.80 (788579717f68..., userDataDir: C:\Users\user\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55281/devtoo..., se:cdpVersion: 143.0.3650.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 38805413a16a3a03059d2dddcf718e12
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:501)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:44)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:388)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.http.HttpTimeoutException: request timed out
-	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:549)
-	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:119)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:462)
-	... 8 more
-</pre></div></td>
-<td>0</td>
-<td>Tests.TC01_RegisterUser@298d9a05</td></tr>
+<td></td>
+<td>8</td>
+<td>Tests.TC01_RegisterUser@6bd16207</td></tr>
 </table><p>
 </body>
 </html>

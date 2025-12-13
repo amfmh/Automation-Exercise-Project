@@ -1,1 +1,0 @@
-[INFO] 13-12-2025 12:58:13 [main] [Tests.TC01_RegisterUser.setup(TC01_RegisterUser.java:45)] - Edge driver is opened
